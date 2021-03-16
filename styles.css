@@ -1,1 +1,67 @@
 /*Maak hier jouw CSS!*/
+body {
+    background-color: antiquewhite;
+}
+.grid-container {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 190px 100px auto 50px;
+    grid-template-areas:
+            "alfa charlie charlie"
+            "beta charlie charlie"
+            "beta epsilon delta"
+            "beta epsilon ."
+            "foxtrot foxtrot foxtrot";
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkred;
+    border-color: black;
+    color: white;
+    padding: 16px;
+}
+
+#alfa {
+    grid-area: alfa;
+}
+
+#beta {
+    grid-area: beta;
+}
+
+#charlie {
+    grid-area: charlie;
+}
+
+#delta {
+    grid-area: delta;
+}
+
+#epsilon {
+    grid-area: epsilon;
+}
+
+#foxtrot {
+    grid-area: foxtrot;
+}
+
+@media (max-width: 680px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+        grid-template-areas:
+                "alfa"
+                "beta"
+                "charlie"
+                "delta"
+                "epsilon"
+                "."
+                "foxtrot";
+    }
+
+}
